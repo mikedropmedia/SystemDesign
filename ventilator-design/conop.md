@@ -18,7 +18,7 @@
 
 ![Functional Block Diagram](functional-block-diagram.png)
 
-## “Pizza Build” Intra-breath Cycle Control
+## Alpha “Pizza Build” Intra-breath Cycle Control
 
 The Alpha system flow path is:
 - Fan
@@ -42,9 +42,41 @@ PEEP pressure target is maintained for a specified amount of time - then transit
 
 Alpha build has no inter-breath or “adaptive” control on top of this.
 
-## Beta Build Cycle Control Strategy
+## v0.2 (Covent) Intra-breath Cycle Control
 
-The Beta iteration of the circuit is currently as follows:
+For this next iteration of the ventilator, the CONOPS are changed in order to support the following:
+* 100% Oxygen flow, in addition to 100% air (fine FiO2 control to come in a future iteration)
+* Closed loop control of the inhale air valve (when using 100% air) or the oxygen valve (when using 100% oxygen) to achieve the target pressure. This decision supports (1) faster rise times than when close loop controlling the blower and (2) eventually moving towards a control set up that coordinates the set points of the two valves in order to give variable FiO2 control - two valves are easier to control in synchrony than one valve and one blower.
+* A minimum amount of constant flow through the system to enable more accurate flow measurements from the venturis
+
+The setup of this build can be seen below:
+![Diagram](pneumatic-system/assets/pneumatic-diagram.png)
+
+**Intra-cycle control for Pressure Control**
+* Inhale triggered by a timer based on the user specified Respiratory Rate and Inhalation Time
+    * Note: supporting an Assist mode where breaths can be triggered by the patient are a stretch goal for v0.2 but not a current main focus for this iteration
+* Inhale cycle:
+    * Close loop control O2 proportional solenoid (for user specified 100% FiO2) or inhale air pinch valve (for user specified 21% FiO2) to achieve and maintain user specified PIP.
+    * Blower is maintained running at either constant speed or through a breath-determined, open loop cycle (meaning that it does not changed based on system measurements)
+        * Note: open loop cycle triggered at the start of the inhale - cycle goes until end of exhale
+    * Exhale air valve is controlled open loop to maintain a minimum amount of flow through the full system
+        * Note: open loop cycle triggered at the start of the inhale - cycle goes until end of exhale
+* Inhale -> Exhale transition occurs on a timer based on the user specified Respiratory Rate and Inhalatino Time
+* Exhale cycle:
+    * Close loop control O2 proportional solenoid (for user specified 100% FiO2) or inhale air pinch valve (for user specified 21% FiO2) to achieve and maintain PIP.
+    * Blower still running open loop
+    * Exhale valve set point still managed open loop
+
+**Open Questions/things to think about (not exhaustive)**
+* What will the blower/exhale air valve open loop set points be?
+        * Also, are these open loop set points adjusted automatically inter-cycle by the system or are they fixed?
+* Does the system want to close loop control the exhale valve on exhale instead of the inhale air or oxygen valves? Unlikely, but will assess system performance.
+
+## Potential Control Strategy for Next Ventilator Iteration
+
+The following reflects discussions around CONOPS once FiO2 control is added.
+
+**NOTE: This is a work in progress and may not reflect the final decisions that are made**
 
 **Key constraints driving CONOPS decisions**
 * User constraints (external requirements/desires for functionality)
