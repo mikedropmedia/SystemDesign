@@ -66,7 +66,7 @@ The setup of this build can be seen below:
         * Note: open loop cycle triggered at the start of the inhale - cycle goes until end of exhale.
 * Inhale -> exhale transition occurs on a timer based on the user-specified Respiratory Rate and Inhalation Time.
 * Exhale cycle:
-    * Close loop control O2 proportional solenoid (for user-specified 100% FiO2) or inhale air pinch valve (for user-specified 21% FiO2) to achieve and maintain PIP.
+    * Close loop control O2 proportional solenoid (for user-specified 100% FiO2) or inhale air pinch valve (for user-specified 21% FiO2) to achieve and maintain PEEP.
     * Blower still running open loop.
     * Exhale valve set point still managed open loop.
 
