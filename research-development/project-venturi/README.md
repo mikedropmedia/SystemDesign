@@ -105,13 +105,13 @@ the diameter of that drill bit. (Any round thing will work.)
 
 ### Parts
 
-| Item | Quantity | Manufacturer  | Part #         | Price (USD)     | Action | Sources    | Notes |
-| ---- |---------:| ------------- | ------------------- | ------------:| ------- |-------------| ----- |
-| 1    |        1 | RespiraWorks  |                     |              | **ask** | **3D**      | 3D-printed venturi |
-| 2    |        2 | McMaster-Carr | 5463K33             | 3.93 / 10    | buy     | [C][2mcmc]  | Barbed fitting 3/32" AKA nipple |
-| 3    |        1 | McMaster-Carr | 5463K44             | 7.39 / 10    | buy     | [C][3mcmc]  | sensing tube 3/23" t-junction |
-| 4    |        - | uxcell        | a16031400ux0163     | 6.49 / 16ft  | buy     | [Z][4amzn]  | 2.5 mm tubing for connecting to sensors |
-| 5    |        - | McMaster-Carr | 50315K68            | 5.75 / 25ft  | buy     | [C][5mcmc]  | 2.5 mm tubing, alternative to *3* |
+| Item | Quantity | Manufacturer  | Part #         | Price (USD)     | Sources    | Notes |
+| ---- |---------:| ------------- | ------------------- | ------------:| -------------| ----- |
+| 1    |        1 | RespiraWorks  |                     |              |  **3D**      | 3D-printed venturi |
+| 2    |        2 | McMaster-Carr | 5463K33             | 3.93 / 10    | [C][2mcmc]  | Barbed fitting 3/32" AKA nipple |
+| 3    |        1 | McMaster-Carr | 5463K44             | 7.39 / 10    |  [C][3mcmc]  | sensing tube 3/23" t-junction |
+| 4    |        - | uxcell        | a16031400ux0163     | 6.49 / 16ft  | [Z][4amzn]  | 2.5 mm tubing for connecting to sensors |
+| 5    |        - | McMaster-Carr | 50315K68            | 5.75 / 25ft  | [C][5mcmc]  | 2.5 mm tubing, alternative to *3* |
 
 [2mcmc]:   https://www.mcmaster.com/5463K33
 [3mcmc]:    https://www.mcmaster.com/5463K44
